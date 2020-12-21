@@ -79,7 +79,8 @@ class PasswordFields extends Component {
         } = this.state;
         if (isEmpty(password)) {
             return this.props.generateAlert('error', t('login:emptyPassword'), t('emptyPasswordExplanation'));
-        } else if (size(password) >= MIN_PASSWORD_LENGTH && isEqual(password, reentry) && score === 4) {
+            // 密码等级大于1即可通过校验
+        } else if (size(password) >= MIN_PASSWORD_LENGTH && isEqual(password, reentry) && score >=1) {
             return this.props.onAcceptPassword();
         } else if (!isEqual(password, reentry)) {
             return this.props.generateAlert('error', t('passwordMismatch'), t('passwordMismatchExplanation'));
