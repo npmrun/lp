@@ -206,10 +206,10 @@
         "passwordsDoNotMatch": "Passwords do not match",
         "passwordsDoNotMatchExplanation": "Passwords do not match. Please try again.",
         "passwordTooShort": "Password is too short",
-        "passwordTooShortExplanation": "Your password must be at least 11 characters. Please try again.",
+        "passwordTooShortExplanation": "Your password must be at least 6 characters. Please try again.",
         "oldPassword": "Cannot set old password",
         "oldPasswordExplanation": "You cannot use the old password as your new password. Please try again with a new password.",
-        "ensureStrongPassword": "Ensure you use a strong password of at least 11 characters.",
+        "ensureStrongPassword": "Ensure you use a strong password of at least 6 characters.",
         "currentPassword": "Current Password",
         "newPassword": "New Password",
         "confirmPassword": "Confirm New Password",
@@ -257,6 +257,7 @@
         "send": "SEND",
         "receive": "RECEIVE",
         "history": "HISTORY",
+        "ltc": "MINING",
         "settings": "SETTINGS"
     },
     "languageSetup": {
@@ -361,6 +362,7 @@
         "clipboardWarningExplanation": "Paste is disabled for your security. You can drag and drop your seed from a text file instead."
     },
     "send": {
+        "history": "history",
         "invalidAddress": "Invalid address",
         "invalidAddressExplanation1": "Address should be {{maxLength}} characters long and should have a checksum.",
         "invalidAddressExplanation2": "Address contains invalid characters.",
@@ -477,6 +479,15 @@
     "writeSeedDown": {
         "writeDownYourSeed": "<0> Write down your seed and checksum and </0><1>triple check</1><2> that they are correct.</2>",
         "scrollToBottom": "Scroll to the bottom"
+    },
+    "ltc":{
+        "searchPlaceholder": "please input search by id",
+        "label1": "mining’id",
+        "label2": "mining’iname",
+        "label3": "runtime",
+        "label4": "mining’istate",
+        "run": "running",
+        "close": "close"
     },
     "history": {
         "bundleHashCopied": "Bundle hash copied",

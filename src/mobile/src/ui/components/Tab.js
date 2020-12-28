@@ -85,7 +85,7 @@ class Tab extends Component {
 
     getPosition() {
         const { name } = this.props;
-        const names = ['balance', 'send', 'receive', 'history', 'settings'];
+        const names = ['balance', 'send', 'receive', 'test', 'settings'];
         return names.indexOf(name) * width / 5;
     }
 

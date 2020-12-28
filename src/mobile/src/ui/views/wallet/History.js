@@ -11,6 +11,7 @@ import { generateAlert } from 'shared-modules/actions/alerts';
 import { computeStatusText, formatRelevantTransactions, filterTransactions } from 'shared-modules/libs/iota/transfers';
 import { promoteTransaction, retryFailedTransaction } from 'shared-modules/actions/transfers';
 import { toggleEmptyTransactions } from 'shared-modules/actions/settings';
+import navigator from 'libs/navigation';
 import {
     getTransactionsForSelectedAccount,
     getSelectedAccountName,
@@ -33,6 +34,7 @@ import TransactionFilters from 'ui/components/TransactionFilters';
 import InfoBox from 'ui/components/InfoBox';
 import { leaveNavigationBreadcrumb } from 'libs/bugsnag';
 import { Styling } from 'ui/theme/general';
+import SettingsBackButton from 'ui/components/SettingsBackButton';
 
 const styles = StyleSheet.create({
     container: {
@@ -127,7 +129,7 @@ class History extends Component {
         /** Transactions for selected account */
         transactions: PropTypes.object.isRequired,
         /** Close active top bar */
-        closeTopBar: PropTypes.func.isRequired,
+        // closeTopBar: PropTypes.func.isRequired,
         /** @ignore */
         theme: PropTypes.object.isRequired,
         /** Account name for selected account */
@@ -190,6 +192,7 @@ class History extends Component {
             filter: 'All',
             search: '',
         };
+        this.onBackPress = this.onBackPress.bind(this)
     }
 
     componentDidMount() {
@@ -373,8 +376,13 @@ class History extends Component {
         return { transactions: orderBy(formattedTransfers, 'time', ['desc']), totals };
     }
 
+    onBackPress() {
+        delete global.onboardingSeed;
+        navigator.pop(this.props.componentId);
+    }
+
     clearInteractions() {
-        this.props.closeTopBar();
+        // this.props.closeTopBar&&this.props.closeTopBar();
         Keyboard.dismiss();
     }
 
@@ -462,10 +470,17 @@ class History extends Component {
         const { filter, search } = this.state;
         const { transactions, totals } = this.prepIOTATransactions();
         const hasTransactions = transactions.length > 0 || search !== '' || filter !== 'All';
-
+        
         return (
             <TouchableWithoutFeedback style={{ flex: 1 }} onPress={() => this.clearInteractions()}>
                 <View style={styles.container}>
+                    {/* <Text onPress={() => this.onBackPress()}>返回</Text> */}
+                    <View style={{marginTop: 50,width:width}}>
+                        <SettingsBackButton
+                            theme={theme}
+                            backFunction={this.onBackPress}
+                        />
+                    </View>
                     <View style={styles.listContainer}>
                         {hasTransactions && (
                             <TransactionFilters

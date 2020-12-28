@@ -9,9 +9,11 @@ import SendComponent from 'ui/views/wallet/Send';
 import Receive from 'ui/views/wallet/Receive';
 import History from 'ui/views/wallet/History';
 import Settings from 'ui/views/wallet/Settings';
+import Test from 'ui/views/test/Test';
 
 const routeToComponent = {
     balance: BalanceComponent,
+    test: Test,
     send: SendComponent,
     receive: Receive,
     history: History,

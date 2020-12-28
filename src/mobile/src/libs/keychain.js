@@ -105,6 +105,7 @@ export const getSecretBoxFromKeychainAndOpenIt = async (alias, keyUInt8) => {
  * @returns {Promise}
  */
 export const hash = async (password) => {
+
     const saltItem = await keychain.get(ALIAS_SALT);
 
     if (isNull(saltItem)) {

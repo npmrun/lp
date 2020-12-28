@@ -254,6 +254,7 @@
         "send": "轉帳",
         "receive": "收款",
         "history": "交易歷史",
+        "ltc": "矿机",
         "settings": "設定"
     },
     "languageSetup": {
@@ -357,6 +358,7 @@
         "clipboardWarningExplanation": "為了您的錢包安全，貼上功能已被停用。您可以將種子碼改從文字檔案中拖曳至此。"
     },
     "send": {
+        "history": "歷史",
         "invalidAddress": "地址無效",
         "invalidAddressExplanation1": "地址應該為 {{maxLength}} 個字元且應有一個檢查碼。",
         "invalidAddressExplanation2": "地址包含無效的字元。",
@@ -472,6 +474,15 @@
     "writeSeedDown": {
         "writeDownYourSeed": "<0> 記下您的種子碼和檢查碼</0><1>請再三確認</1><2>它們是正確無誤的。</2>",
         "scrollToBottom": "滑動至底部"
+    },
+    "ltc":{
+        "searchPlaceholder": "请输入ID搜索",
+        "label1": "矿机ID",
+        "label2": "矿机名称",
+        "label3": "运行时长",
+        "label4": "矿机状态",
+        "run": "运行中",
+        "close": "关闭"
     },
     "history": {
         "bundleHashCopied": "交易組雜湊值已複製",

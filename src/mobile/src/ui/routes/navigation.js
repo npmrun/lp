@@ -30,6 +30,7 @@ import ForceChangePassword from 'ui/views/wallet/ForceChangePassword';
 import SeedVaultBackupComponent from 'ui/views/onboarding/SeedVaultBackup';
 import MigrationComponent from 'ui/components/Migration';
 import InactivityLogout from 'ui/views/wallet/InactivityLogout';
+import History from 'ui/views/wallet/History';
 
 import { isIPhoneX, isAndroid } from 'libs/device';
 
@@ -45,6 +46,7 @@ function applyHOCs(screen) {
 }
 
 export default function registerScreens(store, Provider) {
+    Navigation.registerComponentWithRedux('history', () => applyHOCs(History), Provider, store);
     Navigation.registerComponentWithRedux('migration', () => applyHOCs(MigrationComponent), Provider, store);
     Navigation.registerComponentWithRedux('home', () => applyHOCs(Home), Provider, store);
     Navigation.registerComponentWithRedux('inactivityLogout', () => applyHOCs(InactivityLogout), Provider, store);

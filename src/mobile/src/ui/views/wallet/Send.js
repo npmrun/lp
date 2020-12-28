@@ -7,6 +7,7 @@ import { withTranslation } from 'react-i18next';
 import { StyleSheet, View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, Clipboard } from 'react-native';
 import timer from 'react-native-timer';
 import { connect } from 'react-redux';
+import navigator from 'libs/navigation';
 import {
     isValidAddress,
     isValidMessage,
@@ -91,6 +92,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    infoRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        marginRight: width / 50,
     },
     clearContainer: {
         flex: 1,
@@ -531,6 +538,16 @@ export class Send extends Component {
         const { theme, themeName, address, amount, isFingerprintEnabled, message } = this.props;
 
         switch (modalContent) {
+            case 'history':
+                navigator.push("history")
+                break
+                // return this.props.toggleModalActivity(modalContent, {
+                //     hideModal: () => this.hideModal(),
+                //     theme,
+                //     closeTopBar: ()=>
+                //     textColor: { color: theme.body.color },
+                //     lineColor: { borderBottomColor: theme.body.color },
+                // });
             case 'qrScanner':
                 return this.props.toggleModalActivity(modalContent, {
                     onQRRead: (data) => this.onQRRead(data),
@@ -782,6 +799,21 @@ export class Send extends Component {
         return (
             <TouchableWithoutFeedback style={{ flex: 1 }} onPress={() => this.clearInteractions()}>
                 <View style={styles.container}>
+                <TouchableOpacity
+                                style={{marginTop: 20}}
+                                onPress={() => this.showModal('history')}
+                                hitSlop={{ top: width / 30, bottom: width / 30, left: width / 30, right: width / 30 }}
+                            >
+                                <View style={styles.infoRight}>
+                                    <Icon
+                                        name="history"
+                                        size={width / 22}
+                                        color={theme.body.color}
+                                        style={{ marginRight: width / 60 }}
+                                    />
+                                    <Text style={[styles.infoText, textColor]}>{t('history')}</Text>
+                                </View>
+                            </TouchableOpacity>
                     {!isEmpty(CDAContent) && (
                         <View style={[styles.clearContainer, { backgroundColor: primary.color }]}>
                             <TouchableWithoutFeedback onPress={() => this.clearPaymentRequest()}>
@@ -934,7 +966,8 @@ export class Send extends Component {
                             />
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ flex: 0.33 }} />
+                            {/* <View style={{ flex: 0.5 }} /> */}
+                            {/* unitInfo */}
                             <TouchableOpacity
                                 onPress={() => this.showModal('unitInfo')}
                                 hitSlop={{ top: width / 30, bottom: width / 30, left: width / 30, right: width / 30 }}
@@ -950,7 +983,7 @@ export class Send extends Component {
                                 </View>
                             </TouchableOpacity>
                         </View>
-                        <View style={{ flex: 0.3 }} />
+                        {/* <View style={{ flex: 0.3 }} /> */}
                     </View>
                 </View>
             </TouchableWithoutFeedback>

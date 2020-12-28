@@ -9,6 +9,7 @@ import wallet from './reducers/wallet';
 import accounts from './reducers/accounts';
 import settings from './reducers/settings';
 import alerts from './reducers/alerts';
+import ltcList from './reducers/ltcList';
 import home from './reducers/home';
 import keychain from './reducers/keychain';
 import polling from './reducers/polling';
@@ -30,6 +31,7 @@ if (__MOBILE__) {
 
 const reducers = combineReducers({
     alerts,
+    ltcList,
     marketData,
     accounts,
     settings,

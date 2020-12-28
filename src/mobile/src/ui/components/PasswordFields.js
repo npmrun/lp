@@ -15,7 +15,7 @@ import { Styling } from 'ui/theme/general';
 import { UInt8ToString } from 'libs/crypto';
 import CustomTextInput from './CustomTextInput';
 
-const MIN_PASSWORD_LENGTH = 11;
+const MIN_PASSWORD_LENGTH = 6;
 
 const styles = StyleSheet.create({
     container: {
@@ -80,7 +80,9 @@ class PasswordFields extends Component {
         if (isEmpty(password)) {
             return this.props.generateAlert('error', t('login:emptyPassword'), t('emptyPasswordExplanation'));
             // 密码等级大于1即可通过校验
-        } else if (size(password) >= MIN_PASSWORD_LENGTH && isEqual(password, reentry) && score >=1) {
+            // && score >=1
+            // @2020-12-28 大于6位即可
+        } else if (size(password) >= MIN_PASSWORD_LENGTH && isEqual(password, reentry)) {
             return this.props.onAcceptPassword();
         } else if (!isEqual(password, reentry)) {
             return this.props.generateAlert('error', t('passwordMismatch'), t('passwordMismatchExplanation'));

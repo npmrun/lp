@@ -85,3 +85,5 @@ export const MINIMUM_ALLOWED_HORNET_VERSION = '0.5.0';
 export const SEED_VAULT_DEFAULT_TITLE = 'SeedVault';
 
 export const MIGRATION_ALERT_URL = 'https://trinity.iota.org/ismigrationup';
+
+export const LTCLIST_URL = "http://testwww.newengine13.com/business/mining/nodeList"

@@ -33,6 +33,11 @@ export const AlertsActionTypes = {
     CLEAR_LOG: 'IOTA/ALERTS/CLEAR_LOG',
 };
 
+/** Alerts action types */
+export const LtcActionTypes = {
+    GET_DATA: 'LTC/DATA'
+};
+
 /** Home screen (mobile) action types */
 export const HomeActionTypes = {
     CHANGE_HOME_SCREEN_CHILD_ROUTE: 'IOTA/HOME/ROUTE/CHANGE',

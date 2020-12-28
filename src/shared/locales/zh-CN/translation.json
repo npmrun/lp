@@ -204,10 +204,10 @@
         "passwordsDoNotMatch": "密码不相符",
         "passwordsDoNotMatchExplanation": "密码不匹配，请重试。",
         "passwordTooShort": "密码过短",
-        "passwordTooShortExplanation": "密码长度必须至少为11个字符，请重新尝试。",
+        "passwordTooShortExplanation": "密码长度必须至少为6个字符，请重新尝试。",
         "oldPassword": "不能设置为旧密码",
         "oldPasswordExplanation": "不能将旧密码作为您的新密码，请更换一个新密码后重新尝试。",
-        "ensureStrongPassword": "请您确保使用至少 11 个字符的强密码。",
+        "ensureStrongPassword": "请您确保使用至少 6 个字符的强密码。",
         "currentPassword": "当前密码",
         "newPassword": "新密码",
         "confirmPassword": "确认新密码",
@@ -254,6 +254,7 @@
         "send": "发送",
         "receive": "接收",
         "history": "历史",
+        "ltc": "矿机",
         "settings": "设置"
     },
     "languageSetup": {
@@ -357,6 +358,7 @@
         "clipboardWarningExplanation": "为您的安全起见, 粘贴被禁用。您可以从文本文件中拖放种子。"
     },
     "send": {
+        "history": "历史",
         "invalidAddress": "无效地址",
         "invalidAddressExplanation1": "地址应该是 {{maxLength}} 个字符并且应该有一个校验和。",
         "invalidAddressExplanation2": "地址包含无效字符。",
@@ -472,6 +474,15 @@
     "writeSeedDown": {
         "writeDownYourSeed": "<0>写下您的种子和校验和并</0><1>多次检查</1><2>以确保他们是正确的。</2>",
         "scrollToBottom": "滚动到底部"
+    },
+    "ltc":{
+        "searchPlaceholder": "请输入ID搜索",
+        "label1": "矿机ID",
+        "label2": "矿机名称",
+        "label3": "运行时长",
+        "label4": "矿机状态",
+        "run": "运行中",
+        "close": "关闭"
     },
     "history": {
         "bundleHashCopied": "交易包哈希值已复制",

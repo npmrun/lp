@@ -156,7 +156,7 @@ class Home extends Component {
             return;
         }
         // Set tab animation in type according to relative position of next active tab
-        const routes = ['balance', 'send', 'receive', 'history', 'settings'];
+        const routes = ['balance', 'send', 'receive', 'test', 'settings'];
         this.tabAnimationInType =
             routes.indexOf(nextRoute) < routes.indexOf(this.props.currentRoute)
                 ? ['slideInLeftSmall', 'fadeIn']
@@ -279,7 +279,12 @@ class Home extends Component {
                                     theme={theme}
                                     text={t('home:balance').toUpperCase()}
                                 />
-                                <Tab name="send" icon="send" theme={theme} text={t('home:send').toUpperCase()} />
+                                <Tab 
+                                    name="send" 
+                                    icon="send" 
+                                    theme={theme} 
+                                    text={t('home:send').toUpperCase()} 
+                                />
                                 <Tab
                                     name="receive"
                                     icon="receive"
@@ -287,10 +292,10 @@ class Home extends Component {
                                     text={t('home:receive').toUpperCase()}
                                 />
                                 <Tab
-                                    name="history"
-                                    icon="history"
+                                    name="test"
+                                    icon="kuangji"
                                     theme={theme}
-                                    text={t('home:history').toUpperCase()}
+                                    text={ t('home:ltc')/*t('home:history').toUpperCase()*/}
                                 />
                                 <Tab
                                     name="settings"

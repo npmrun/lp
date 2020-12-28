@@ -48,7 +48,7 @@ class Tabs extends Component {
     }
 
     getPosition(route) {
-        const routes = ['balance', 'send', 'receive', 'history', 'settings'];
+        const routes = ['balance', 'send', 'receive', 'test', 'settings'];
         return routes.indexOf(route) * width / 5;
     }
 

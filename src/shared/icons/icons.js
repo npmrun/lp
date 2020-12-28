@@ -58,4 +58,6 @@ module.exports = {
     search: '🔍',
     link: '🔗',
     help: '🔧',
+    lishi: '🌛',
+    kuangji: '🌜'
 };
