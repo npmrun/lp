@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
     },
     textGrow:{
         flex: 1,
-        fontSize: 15,
+        fontSize: 12,
         fontWeight: 'normal',
-        lineHeight: 40
+        lineHeight: 40,
     },
     textSmallGrow:{
-        flex: .6,
-        fontSize: 15,
+        flex: 1,
+        fontSize: 12,
         fontWeight: 'normal',
         lineHeight: 40
     },
@@ -148,11 +148,13 @@ class Test extends PureComponent {
         }
     }
     _dateFormDate(timestamp){
+        let cur = (new Date()).getTime();
+        let rr = cur - timestamp
         // let date = new Date(timestamp);
-        let day = ~~(timestamp/86400000);
-        let hour = ~~(timestamp%86400000/3600000);
-        let minute = ~~(317851018%3600000/60000);
-        let seconds = ~~(317851018%60000/1000);
+        let day = ~~(rr/86400000);
+        let hour = ~~(rr%86400000/3600000);
+        let minute = ~~(rr%3600000/60000);
+        let seconds = ~~(rr%60000/1000);
         // let milliSeconds = timestamp%1000;
         return `${day}:${hour}:${minute}:${seconds}`;
     }

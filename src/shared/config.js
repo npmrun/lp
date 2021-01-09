@@ -86,4 +86,4 @@ export const SEED_VAULT_DEFAULT_TITLE = 'SeedVault';
 
 export const MIGRATION_ALERT_URL = 'https://trinity.iota.org/ismigrationup';
 
-export const LTCLIST_URL = "http://testwww.newengine13.com/business/mining/nodeList"
+export const LTCLIST_URL = "https://testwww.newengine13.com/business/mining/nodeList"
